@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.uptimesoftware.com/erdc/erdc erdc"
+        xmlns="http://www.uptimesoftware.com/erdc/erdc"
+        xmlns:upt="http://www.uptimesoftware.com/erdc/erdc" version="4.0" target_grouping="other">
+    <class>DB2 Retained</class>
+    <exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+    <elements>
+        <element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+            <control_options> size:40 </control_options>
+            <default_value>scripts/MonitorDB2Retained/MonitorDB2Retained.sh</default_value>
+            <short_description>Script Name</short_description>
+            <long_description>Name of the script/binary/process to be executed by up.time </long_description>
+            <validation_rule>
+                <alphanumeric/>
+            </validation_rule>
+            <error_message>
+                <alphanumeric>required field</alphanumeric>
+            </error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>              
+        <group name="group_dbport" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbport" parameter_type="input" data_type="integer" gui_basic="1"
+                     range_type="0" units="">
+                <control_options>size:10</control_options>
+                <default_value>50001</default_value>
+                <short_description>Database Port</short_description>
+                <long_description>Enter the port the database is listening on</long_description>
+                <validation_rule>
+                    <alphanumeric/>
+                </validation_rule>
+                <error_message>
+                    <alphanumeric>required field</alphanumeric>
+                </error_message>
+                <gui_type>
+                    <integer/>
+                </gui_type>
+            </element>
+        </group>
+
+		<group name="group_dbssl" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbssl" parameter_type="input" data_type="boolean" gui_basic="1"
+                     range_type="0" units="">
+                <control_options/>
+                <short_description>Use SSL</short_description>
+                <long_description>Specify to use SSL connection or not</long_description>
+                <validation_rule/>
+                <gui_type>
+                    <boolean/>
+                </gui_type>
+            </element>
+        </group>
+		<element name="dbtrustStore" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>SSL TrustStore</short_description>
+            <long_description>SSL TrustStore</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="dbtrustStorePassword" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>SSL TrustStore Password</short_description>
+            <long_description>SSL TrustStore Password</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <password/>
+            </gui_type>
+        </element>
+		
+		
+		
+		
+        <group name="group_dbuser" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbuser" parameter_type="input" data_type="string" gui_basic="1"
+                     range_type="0" units="">
+                <control_options>size:10</control_options>
+                <default_value></default_value>
+                <short_description>Database User</short_description>
+                <long_description>Enter a userid with read access to the database</long_description>
+                <validation_rule>
+                    <alphanumeric/>
+                </validation_rule>
+                <error_message>
+                    <alphanumeric>required field</alphanumeric>
+                </error_message>
+                <gui_type>
+                    <string/>
+                </gui_type>
+            </element>
+        </group>                 
+        <group name="group_dbpassword" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbpassword" parameter_type="input" data_type="string" gui_basic="1"
+                     range_type="0" units="">
+                <control_options>size:10</control_options>
+                <default_value></default_value>
+                <short_description>Database Password</short_description>
+                <long_description>Enter the password for the userid with read access to the database</long_description>
+                <validation_rule>
+                    <alphanumeric/>
+                </validation_rule>
+                <error_message>
+                    <alphanumeric>required field</alphanumeric>
+                </error_message>
+                <gui_type>
+                    <string/>
+                </gui_type>
+            </element>
+        </group>                 
+        <group name="group_dbname" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbname" parameter_type="input" data_type="string" gui_basic="1"
+                     range_type="0" units="">
+                <control_options>size:20</control_options>
+                <default_value/>
+                <short_description>Database Name</short_description>
+                <long_description>Enter the name of the database instance you wish to test</long_description>
+                <validation_rule>
+                    <alphanumeric/>
+                </validation_rule>
+                <error_message>
+                    <alphanumeric>required field</alphanumeric>
+                </error_message>
+                <gui_type>
+                    <string/>
+                </gui_type>
+            </element>
+        </group>  
+		<group name="group_dbquery" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="dbquery" parameter_type="input" data_type="string" gui_basic="1"
+                     range_type="0">
+                <control_options>rows:4; cols:40</control_options>
+                <default_value/>
+                <short_description>Database Query</short_description>
+                <long_description>Enter the query to execute against the database</long_description>
+                <validation_rule>
+                    <alphanumeric/>
+                </validation_rule>
+                <error_message>
+                    <alphanumeric>required field</alphanumeric>
+                </error_message>
+                <gui_type>
+                    <textarea/>
+                </gui_type>
+            </element>
+        </group>		
+		<element name="queryType" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value>None</default_value>
+            <short_description>Query Result Type</short_description>
+            <long_description>Query Result Type</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+            <error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <single_select type="dropdown">
+					<value>Numeric</value>
+                    <value>String</value>
+                </single_select>
+            </gui_type>
+        </element>
+
+		<element name="numeric" parameter_type="output" data_type="decimal" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Numeric Result</short_description>
+            <long_description>Numeric Result</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+				<decimal/>
+            </gui_type>
+        </element>	
+
+        <element name="string" parameter_type="output" data_type="string" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>String Result</short_description>
+            <long_description>String Result</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+				<string/>
+            </gui_type>
+        </element>
+		<element name="row" parameter_type="output" data_type="integer" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Row Count</short_description>
+            <long_description>Row Count</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+				<integer/>
+            </gui_type>
+        </element>
+		
+        <group name="timerresult" switch="0">
+            <short_description/>
+            <long_description/>
+            <element name="timer" parameter_type="output" data_type="integer" gui_basic="0"
+range_type="1" units="ms">
+                <control_options>size:8</control_options>
+                <default_value/>
+                <short_description>Response time</short_description>
+                <long_description>Response time in ms</long_description>
+                <validation_rule/>
+                <error_message/>
+                <gui_type>
+                    <integer/>
+                </gui_type>
+            </element>
+        </group>	
+    </elements>
+    <help/>
+</uptime>

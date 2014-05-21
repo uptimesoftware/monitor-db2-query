@@ -120,7 +120,7 @@
                     <alphanumeric>required field</alphanumeric>
                 </error_message>
                 <gui_type>
-                    <string/>
+                    <password/>
                 </gui_type>
             </element>
         </group>                 
@@ -170,8 +170,8 @@
             <default_value>None</default_value>
             <short_description>Query Result Type</short_description>
             <long_description>Query Result Type</long_description>
-            <validation_rule><alphanumeric/></validation_rule>
-            <error_message><alphanumeric>required field</alphanumeric></error_message>
+            <validation_rule/>
+            <error_message/>
             <gui_type>
                 <single_select type="dropdown">
 					<value>Numeric</value>
@@ -180,30 +180,34 @@
             </gui_type>
         </element>
 
-		<element name="numeric" parameter_type="output" data_type="decimal" gui_basic="1" range_type="0" units="">
+		<element name="Numeric" parameter_type="output" data_type="decimal" gui_basic="1" range_type="0" units="">
             <control_options>size:8</control_options>
             <default_value/>
             <short_description>Numeric Result</short_description>
             <long_description>Numeric Result</long_description>
-            <validation_rule/>
+			<validation_rule>
+				<alphanumeric/>
+			</validation_rule>
             <error_message/>
             <gui_type>
 				<decimal/>
             </gui_type>
         </element>	
 
-        <element name="string" parameter_type="output" data_type="string" gui_basic="1" range_type="0" units="">
+        <element name="String" parameter_type="output" data_type="string" gui_basic="1" range_type="0" units="">
             <control_options>size:8</control_options>
             <default_value/>
             <short_description>String Result</short_description>
             <long_description>String Result</long_description>
-            <validation_rule/>
+			<validation_rule>
+				<alphanumeric/>
+			</validation_rule>
             <error_message/>
             <gui_type>
 				<string/>
             </gui_type>
         </element>
-		<element name="row" parameter_type="output" data_type="integer" gui_basic="1" range_type="0" units="">
+		<element name="Row" parameter_type="output" data_type="integer" gui_basic="1" range_type="0" units="">
             <control_options>size:8</control_options>
             <default_value/>
             <short_description>Row Count</short_description>

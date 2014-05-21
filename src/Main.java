@@ -100,7 +100,7 @@ public class Main {
                  }else {
                      System.out.println("WARN - Result is not Numeric ") ;
                      System.out.println("Result = " + queryResult) ;
-                     System.exit(1);
+                     System.exit(3);
                  }
              } else if (dataType.matches("\\s*string\\s*")){
                  if (queryResult.matches(".*\\w+.*")){
@@ -110,9 +110,13 @@ public class Main {
                  }else {
                      System.out.println("WARN - Result is not String ") ;
                      System.out.println("Result = " + queryResult) ;
-                     System.exit(1);
+                     System.exit(3);
                  }
-             }
+             } else {
+					 System.out.println("Result " + queryResult) ;
+                     System.out.println("Row " + rowCount ) ;
+                     System.exit(0);	 
+			 }
             //System.out.println(args[6] + " " + queryResult);
             
           /*  if (queryResult.indexOf(args[4]) != -1){

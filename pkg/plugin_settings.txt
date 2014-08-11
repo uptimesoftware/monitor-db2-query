@@ -1,5 +1,5 @@
 name=DB2 Retained
-version=0.1
+version=0.2
 platforms=linux windows
 description=This monitors connect to DB2 and run the specified query.  Threshold can be set on the result of the query can be set to trigger alerts.
 requiresAgentScript=false

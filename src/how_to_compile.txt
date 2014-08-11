@@ -1,0 +1,5 @@
+1. Compile JAVA to creat class files
+>javac Main.java Db2DatabaseConnection.java
+
+2. Create JAR files with class files in db2basic directory
+>jar vcmf MANIFEST.txt db2retained.jar db2basic

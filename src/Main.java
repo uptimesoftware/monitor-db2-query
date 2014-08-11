@@ -88,8 +88,8 @@ public class Main {
 
   
              if (queryResult.length()== 0 ){
-                 System.out.println("WARN - Empty result");
-                 System.exit(1);
+                 System.out.println("OK - Empty result");
+                 System.exit(0);
              }
             
              if (dataType.matches("\\s*numeric\\s*")){
